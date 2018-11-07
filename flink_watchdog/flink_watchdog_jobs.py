@@ -108,8 +108,8 @@ def runJob(jobName, launchJobCommand):
     print str(datetime.datetime.now()) + 'Restarting ' + jobName + ' job...'
     launchJobNameCommand = launchJobCommand.replace('#JOBNAME',jobName)
     print str(datetime.datetime.now()) + 'Launching command ' + launchJobNameCommand
-    #result = subprocess.run(launchJobNameCommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    #print result.stdout
+    result = subprocess.run(launchJobNameCommand, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print result.stdout
 
 def getFlinkRunningJobList(flinkHost,flinkPort):
  
